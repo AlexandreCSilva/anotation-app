@@ -1,18 +1,41 @@
 module.exports = {
   root: true,
   env: { browser: true, es2020: true },
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react-hooks/recommended',
-  ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
-  parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh'],
+  extends: ['@rocketseat/eslint-config/node'],
+  plugins: ['eslint-plugin-import-helpers'],
   rules: {
-    'react-refresh/only-export-components': [
+    'no-undef': 'warn',
+    camelcase: 'warn',
+    'no-redeclare': 'off',
+    'no-useless-constructor': 'off',
+    '@typescript-eslint/no-unused-vars': [
       'warn',
-      { allowConstantExport: true },
+      {
+        argsIgnorePattern: '_',
+      },
+    ],
+    'import-helpers/order-imports': [
+      'warn',
+      {
+        newlinesBetween: 'always',
+        groups: ['module', '/^@/', ['parent', 'sibling'], 'index'],
+        alphabetize: {
+          order: 'asc',
+          ignoreCase: true,
+        },
+      },
+    ],
+    'prettier/prettier': [
+      'error',
+      {
+        "endOfLine": "auto",
+        arrowParens: 'always',
+        printWidth: 80,
+        semi: true,
+        singleQuote: true,
+        tabWidth: 2,
+        trailingComma: 'es5',
+      },
     ],
   },
-}
+};
