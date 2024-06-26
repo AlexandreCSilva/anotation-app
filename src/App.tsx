@@ -1,16 +1,15 @@
-import { Background } from './components';
-import { ThemeContextProvider } from './components/theme-provider';
+import { Background, ThemeContext } from './components';
 import { GlobalStyle } from './styles';
 
 export function App() {
   return (
     <>
       <GlobalStyle />
-      <ThemeContextProvider>
+      <ThemeContext>
         <Background.basic>
           <p>Hello world!</p>
         </Background.basic>
-      </ThemeContextProvider>
+      </ThemeContext>
     </>
   );
 }
