@@ -27,6 +27,8 @@ export function App() {
               <SideMenu.Text text="Dashboard" isOpened={isOpened} />
             </SideMenu.Item>
 
+            <SideMenu.Bar isOpened={isOpened} />
+
             <SideMenu.Foot isOpened={isOpened}>
               <SideMenu.Item icon="graph" isOpened={isOpened}>
                 <div style={{ width: '40px', padding: '5px' }}>

@@ -34,10 +34,8 @@ export function SideMenuItem({ children, isOpened, isSubItem }: Props) {
       ? 'scaleX(1) scaleY(1)'
       : !isOpened
         ? 'scaleX(1.2) scaleY(1.2)'
-        : isSubItem
-          ? 'scaleX(0.92) scaleY(0.92)'
-          : 'scaleX(1.05) scaleY(1.05)',
-    width: !isOpened ? '42px' : '210px',
+        : 'scaleX(1.05) scaleY(1.05)',
+    width: !isOpened ? '42px' : isSubItem ? '184px' : '210px',
     paddingLeft: isOpened && isSubItem ? '24px' : '0px',
   });
 

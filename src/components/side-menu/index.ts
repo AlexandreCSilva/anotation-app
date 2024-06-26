@@ -1,3 +1,4 @@
+import { SideMenuBar } from './side-menu.bar';
 import { SideMenuFoot } from './side-menu.foot';
 import { SideMenuItem } from './side-menu.item';
 import { SideMenuRoot } from './side-menu.root';
@@ -8,4 +9,5 @@ export const SideMenu = {
   Item: SideMenuItem,
   Text: SideMenuText,
   Foot: SideMenuFoot,
+  Bar: SideMenuBar,
 };
