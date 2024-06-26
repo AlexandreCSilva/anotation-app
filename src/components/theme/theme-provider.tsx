@@ -2,14 +2,14 @@ import { createContext, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import { DarkTheme, LightTheme } from '../../styles';
-import { Props } from '../basic.dao';
+import { ChildrenProps } from '../basic.dao';
 
-const Context = createContext({
+export const ThemeContext = createContext({
   isDarkTheme: true,
   changeTheme: () => {},
 });
 
-export const ThemeContext = ({ children }: Props) => {
+export const ThemeContextProvider = ({ children }: ChildrenProps) => {
   const [isDarkTheme, setIsDarkTheme] = useState(true);
 
   const changeTheme = () => {
@@ -17,10 +17,10 @@ export const ThemeContext = ({ children }: Props) => {
   };
 
   return (
-    <Context.Provider value={{ isDarkTheme, changeTheme }}>
+    <ThemeContext.Provider value={{ isDarkTheme, changeTheme }}>
       <ThemeProvider theme={isDarkTheme ? DarkTheme : LightTheme}>
         {children}
       </ThemeProvider>
-    </Context.Provider>
+    </ThemeContext.Provider>
   );
 };

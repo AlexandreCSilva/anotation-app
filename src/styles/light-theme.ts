@@ -1,14 +1,7 @@
 export const LightTheme = {
   color: {
-    background: '#fff',
-    primary: {
-      main: '#fffae3',
-      contrastText: '#c1d9d0',
-    },
-    secundary: {
-      main: '#736681',
-      contrastText: '#62455b',
-    },
+    dark: '#fff',
+    medium: '#474787',
   },
 
   border: {
