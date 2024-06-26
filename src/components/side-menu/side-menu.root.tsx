@@ -8,6 +8,7 @@ const SideMenuRootStyle = styled.div`
   border-right: solid 2px ${(props) => props.theme.color.medium};
   height: 100vh;
   position: fixed;
+  padding-top: 5px;
 `;
 
 interface Props {

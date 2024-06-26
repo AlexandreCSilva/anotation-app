@@ -9,7 +9,7 @@ const SideMenuItemStyle = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px;
+  height: 50px;
 
   div {
     border-radius: 5px;
@@ -21,16 +21,24 @@ interface Props {
   icon: string;
   children: ReactNode;
   isOpened: boolean;
+  isSubItem?: boolean;
 }
 
-export function SideMenuItem({ children, isOpened }: Props) {
+export function SideMenuItem({ children, isOpened, isSubItem }: Props) {
   const [isHolding, setIsHolding] = useState(false);
   const { isDarkTheme } = useContext(ThemeContext);
 
   const animation = useSpring({
     config: config.wobbly,
-    scale: !isHolding ? 'scaleX(1) scaleY(1)' : 'scaleX(1.2) scaleY(1.2)',
-    width: !isOpened ? '42px' : '185px',
+    scale: !isHolding
+      ? 'scaleX(1) scaleY(1)'
+      : !isOpened
+        ? 'scaleX(1.2) scaleY(1.2)'
+        : isSubItem
+          ? 'scaleX(0.92) scaleY(0.92)'
+          : 'scaleX(1.05) scaleY(1.05)',
+    width: !isOpened ? '42px' : '210px',
+    paddingLeft: isOpened && isSubItem ? '24px' : '0px',
   });
 
   const linearAnimation = useSpring({
@@ -51,6 +59,7 @@ export function SideMenuItem({ children, isOpened }: Props) {
           transform: animation.scale,
           backgroundColor: linearAnimation.backgroundColor,
           width: animation.width,
+          paddingLeft: animation.paddingLeft,
         }}
       >
         {children}

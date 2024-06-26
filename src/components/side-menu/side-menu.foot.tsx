@@ -5,7 +5,7 @@ import { useSpring, animated } from '@react-spring/web';
 
 const SideMenuFootStyle = styled.div`
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
 `;
 
 interface Props {
@@ -15,7 +15,7 @@ interface Props {
 
 export function SideMenuFoot({ children, isOpened }: Props) {
   const animation = useSpring({
-    left: !isOpened ? 'translate(8px, 0)' : 'translate(26px, 0)',
+    left: !isOpened ? 'translate(8px, 0)' : 'translate(16px, 0)',
   });
 
   return (

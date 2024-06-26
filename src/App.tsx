@@ -20,6 +20,13 @@ export function App() {
               <SideMenu.Text text="Dashboard" isOpened={isOpened} />
             </SideMenu.Item>
 
+            <SideMenu.Item icon="graph" isOpened={isOpened} isSubItem={true}>
+              <div style={{ width: '40px', padding: '5px' }}>
+                {IconHelper('graph', 'small')}
+              </div>
+              <SideMenu.Text text="Dashboard" isOpened={isOpened} />
+            </SideMenu.Item>
+
             <SideMenu.Foot isOpened={isOpened}>
               <SideMenu.Item icon="graph" isOpened={isOpened}>
                 <div style={{ width: '40px', padding: '5px' }}>

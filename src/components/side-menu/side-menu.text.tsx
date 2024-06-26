@@ -22,7 +22,7 @@ interface Props {
 export function SideMenuText({ text, isOpened }: Props) {
   const linearAnimation = useSpring({
     config: config.wobbly,
-    width: !isOpened ? '0px' : '170px',
+    width: !isOpened ? '0px' : '190px',
   });
 
   return (
