@@ -17,8 +17,22 @@ interface Props {
 }
 
 export function SideMenuRoot({ children, isOpened, setIsOpened }: Props) {
+  let width = window.innerWidth;
+
+  const onResize = () => {
+    width = window.innerWidth;
+
+    if (width < 1000 && isOpened === true) {
+      setIsOpened(false);
+    }
+  };
+
+  window.addEventListener('resize', onResize);
+
   const handleClick = () => {
-    setIsOpened(!isOpened);
+    if (width > 1000) {
+      setIsOpened(!isOpened);
+    }
   };
 
   const animation = useSpring({

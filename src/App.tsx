@@ -6,6 +6,7 @@ import { GlobalStyle } from './styles';
 
 export function App() {
   const [isOpened, setIsOpened] = useState(false);
+
   return (
     <>
       <GlobalStyle />

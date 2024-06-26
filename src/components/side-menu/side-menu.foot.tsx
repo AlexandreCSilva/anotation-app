@@ -15,7 +15,7 @@ interface Props {
 
 export function SideMenuFoot({ children, isOpened }: Props) {
   const animation = useSpring({
-    left: !isOpened ? 'translate(8px, 0)' : 'translate(22px, 0)',
+    left: !isOpened ? 'translate(8px, 0)' : 'translate(26px, 0)',
   });
 
   return (
