@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { useSpring, animated } from '@react-spring/web';
+import { useSpring, animated, config } from '@react-spring/web';
 
 const SideMenuTextStyle = styled.div`
   display: flex;
@@ -9,6 +9,8 @@ const SideMenuTextStyle = styled.div`
 
   div {
     color: #474787;
+    font-size: 20px;
+    height: max-content;
   }
 `;
 
@@ -19,7 +21,8 @@ interface Props {
 
 export function SideMenuText({ text, isOpened }: Props) {
   const linearAnimation = useSpring({
-    width: !isOpened ? '0px' : '140px',
+    config: config.wobbly,
+    width: !isOpened ? '0px' : '170px',
   });
 
   return (

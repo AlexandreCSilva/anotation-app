@@ -18,6 +18,15 @@ export function App() {
               </div>
               <SideMenu.Text text="Dashboard" isOpened={isOpened} />
             </SideMenu.Item>
+
+            <SideMenu.Foot isOpened={isOpened}>
+              <SideMenu.Item icon="graph" isOpened={isOpened}>
+                <div style={{ width: '40px', padding: '5px' }}>
+                  {IconHelper('config', 'small')}
+                </div>
+                <SideMenu.Text text="Configuração" isOpened={isOpened} />
+              </SideMenu.Item>
+            </SideMenu.Foot>
           </SideMenu.Root>
           <p>Hello world!</p>
         </Background.basic>

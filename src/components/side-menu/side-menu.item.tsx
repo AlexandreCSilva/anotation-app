@@ -14,7 +14,6 @@ const SideMenuItemStyle = styled.span`
   div {
     border-radius: 5px;
     display: flex;
-    overflow: hidden;
   }
 `;
 
@@ -31,7 +30,7 @@ export function SideMenuItem({ children, isOpened }: Props) {
   const animation = useSpring({
     config: config.wobbly,
     scale: !isHolding ? 'scaleX(1) scaleY(1)' : 'scaleX(1.2) scaleY(1.2)',
-    width: !isOpened ? '42px' : '155px',
+    width: !isOpened ? '42px' : '185px',
   });
 
   const linearAnimation = useSpring({

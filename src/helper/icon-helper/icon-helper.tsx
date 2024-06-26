@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { FaGear } from 'react-icons/fa6';
 import { GoGraph } from 'react-icons/go';
 import { IoIosCloseCircle } from 'react-icons/io';
 
@@ -16,6 +17,8 @@ export const IconHelper = (
   switch (icon) {
     case 'graph':
       return <GoGraph style={IconStyle} size={IconSize} />;
+    case 'config':
+      return <FaGear style={IconStyle} size={IconSize} />;
     default:
       return <IoIosCloseCircle style={IconStyle} size={IconSize} />;
   }

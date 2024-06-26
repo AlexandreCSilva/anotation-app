@@ -23,7 +23,7 @@ export function SideMenuRoot({ children, isOpened, setIsOpened }: Props) {
 
   const animation = useSpring({
     config: config.wobbly,
-    width: !isOpened ? '60px' : '200px',
+    width: !isOpened ? '60px' : '240px',
   });
 
   return (
